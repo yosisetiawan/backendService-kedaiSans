@@ -38,6 +38,11 @@ and config.json settings in the config folder
     "operatorsAliases": false
   },
 ```
+migrate to database
+
+```migrate
+npx sequelize-cli db:migrate
+```
 
 then save and run server
 
