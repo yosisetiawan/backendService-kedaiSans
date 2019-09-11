@@ -1,8 +1,14 @@
 const models = require('../models')
 const Menu = models.menu
+const Category = models.categorie
 
 exports.index = (req, res) => {
-    Menu.findAll()
+    Menu.findAll({
+        include:[{
+            model: Category,
+            as:"category_id"
+        }]
+    })
     .then(menu => {
         res.send(menu)
     }).catch(err => {

@@ -13,6 +13,7 @@ const orderController = require('../controllers/orderController')
 app.group("/api/v1/", (router) => {
     router.get('/orders', orderController.index)
     router.get('/orders/:id', orderController.show)
+    router.get('/order/bill/:id', orderController.showBill)
     router.post('/order', orderController.store)
     router.put('/order/:id', orderController.update)
     router.delete('/order/:id', orderController.destroy)

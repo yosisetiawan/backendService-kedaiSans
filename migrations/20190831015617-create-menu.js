@@ -15,7 +15,14 @@ module.exports = {
         type: Sequelize.DOUBLE
       },
       categoryId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model: 'categories',
+          key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       },
       images:{
         type: Sequelize.STRING

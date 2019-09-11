@@ -7,7 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     images: DataTypes.STRING
   }, {});
   menu.associate = function(models) {
-    // associations can be defined here
+    menu.belongsTo(models.categorie, {
+      as: 'category_id',
+      foreignKey: 'categoryId'
+    })
   };
   return menu;
 };
